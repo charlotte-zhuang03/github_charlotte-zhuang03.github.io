@@ -1,5 +1,6 @@
 import numpy as np
 
+
 class LogisticRegression():
     def __init__(self):
         pass
@@ -145,7 +146,7 @@ class LogisticRegression():
         Compute the gradient descent for the fit() method
         """
         X_ = self.pad(X)
-        loss_sum = np.zeros(X_.shape[1])
+        loss_sum = np.zeros(X_.shape[0])
         for i in range(X_.shape[0]):
             sigmoid_w_xi = 1/(1+np.exp(-(np.dot(self.w, X_[i]))))
             loss_sum = loss_sum + (sigmoid_w_xi - y[i])*X_[i]
